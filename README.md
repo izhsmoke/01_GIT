@@ -1,4 +1,4 @@
-# Шпаргалка о работе с Git и GitHub
+# Заметки о работе с Bash, Git и GitHub
 Git - система контроля версий
 
 ---
@@ -6,23 +6,33 @@ Git - система контроля версий
 ## Работа с командной строкой (BASH)
 1. Текущий рабочий каталог
 
-   > pwd
+   ```
+   pwd
+   ```
 
 3. Содержимое текущего каталога
 
-   > ls
+   ```
+   ls
+   ```
     
 4. Создание каталога
    
-   > mkdir %НАЗВАНИЕ_КАТАЛОГА%
+   ```
+   mkdir %НАЗВАНИЕ_КАТАЛОГА%
+   ```
 
 5. Копировать
    
-   > cp file.txt %ПУТЬ%
+   ```
+   cp file.txt %ПУТЬ%
+   ```
 
 6. Переместить
    
-   > mv file.txt %ПУТЬ%
+   ```
+   mv file.txt %ПУТЬ%
+   ```
 
 7. Удалить:
    |   Данные      |   Команда        |
@@ -50,47 +60,62 @@ Git - система контроля версий
 
 ## SSH-ключи
 1. Генерируем SSH-ключ
-    >$ ssh-keygen -t rsa -b 4096 -C "электронная почта, к которой привязан ваш аккаунт на GitHub"
+    ```
+    ssh-keygen -t rsa -b 4096 -C "электронная почта, к которой привязан ваш аккаунт на GitHub"
+    ```
 	
 2. Копировать содержимое ключа в буфер обмена:
-    >$ clip < ~/.ssh/id_rsa.pub
+    ```clip < ~/.ssh/id_rsa.pub```
 	
 3. Привязываем SSH-ключ к GitHub
     > Заходим в аккаунт GitHub -> Settings -> SSH and GPG keys -> New SSH key -> Вводим название и вставляем скопированный в буфер обмена ключ -> Add SSH key
 	
 4. Проверка ключа
-    >$ ssh -T git@github.com
-    >
-    >Ввести YES
+    ```
+    ssh -T git@github.com
+    ```
+    >Ввести <b>YES</b>
     >
     >Получить в ответ: *Hi %ВАШ_АККАУНТ%! You've successfully authenticated, but GitHub does not provide shell access.*
 	
 ## Связываем локальный и удалённый репозитории
 1. Открыть папку проекта
 	
-    >$ cd /папка_проекта
+    ```
+    cd /папка_проекта
+    ```
     
 2. Инициализировать проект
 
-    >$ git init
+    ```
+    git init
+    ``` 
     
 3. Добавить файл
-
-    >$ git add README.md
+    ```
+    git add README.md
+    ```
 
 4. Создать коммит
 
-    >$ git commit -m "first commit"
+    ```
+    git commit -m "first commit"
+    ```
 
 5. Создать ветку
    
-    >$ git branch -M main
+    ```
+    git branch -M main
+    ```
     
 6. Привязать локальный репозиторий к удалённому
    
-    >$ git remote add origin https://github.com/%ИМЯ_АККАУНТА%/%ИМЯ_ПРОЕКТА%.git
+    ```
+    git remote add origin https://github.com/%ИМЯ_АККАУНТА%/%ИМЯ_ПРОЕКТА%.git
+    ```
 	
 8. Отправить изменения на удаленный репозиторий
 
-    >$ git push -u origin main
-	
+    ```
+    git push -u origin master
+    ```
