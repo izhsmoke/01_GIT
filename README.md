@@ -202,3 +202,20 @@ git reset --hard <hash>
 git commit --amend -m "Обновлённое сообщение коммита"
 ```
 
+- Чтобы перевести файл из staged обратно в modified или untracked
+
+  ```
+  git restore --staged <file>
+  ```
+  
+- Чтобы «откатит» историю до коммита с хешем <hash>. **Более поздние коммиты потеряются!**
+
+  ```
+  git reset --hard <commit hash>
+  ```
+  
+- Чтобы «откатит» изменения в файле до последней сохранённой (в коммите или в staging) версии
+
+  ```
+  git restore <file>
+  ```
